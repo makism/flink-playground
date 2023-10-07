@@ -39,6 +39,8 @@ services:
       - flink-cluster
     depends_on:
       - zookeeper
+    volumes:
+      - ./src/:/opt/src/
     profiles: ["cluster"]
   taskmanager:
     hostname: taskmanager
