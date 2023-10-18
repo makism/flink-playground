@@ -13,8 +13,6 @@ services:
       context: .
       dockerfile: eventsim.Dockerfile
     command: -c "examples/example-config.json" --start-time "2022-01-01T00:00:00" --end-time "2023-01-01T00:00:00" --nusers 1000 --kafkaBrokerList kafka:29092
-    depends_on:
-      - init-kafka
     networks:
       - flink-cluster
     profiles: ["eventsim"]
